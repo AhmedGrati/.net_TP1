@@ -134,12 +134,5 @@ namespace TP1
             base.solde += somme + somme * taux;
             base.operations.Add("+" + somme);
         }
-        public override void crediter(float somme, Compte compte)
-        {
-            base.solde += somme + somme * taux;
-            compte.solde -= somme;
-            base.operations.Add("+" + somme);
-            compte.operations.Add("-" + somme);
-        }
     }
 }
