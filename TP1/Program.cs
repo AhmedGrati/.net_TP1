@@ -7,14 +7,14 @@ namespace TP1
         static void Main(string[] args)
         {
             CompteCourant nicolasCompteCourant = new CompteCourant(0, "Nicolas", new ArrayList(), 2000F);
-            CompteEpargne nicolasCompteEpargne = new CompteEpargne(0, "Nicolas", new ArrayList(),0.02F);
-            CompteCourant jeremieCompteCourant = new CompteCourant(0, "Nicolas", new ArrayList(), 500);
+            CompteEpargne nicolasCompteEpargne = new CompteEpargne(0, "Nicolas", new ArrayList(), 0.02F);
+            CompteCourant jeremieCompteCourant = new CompteCourant(0, "jermie", new ArrayList(), 500);
 
             nicolasCompteCourant.crediter(100);
             nicolasCompteCourant.debiter(50);
             nicolasCompteCourant.crediter(20);
             nicolasCompteCourant.debiter(20);
-            
+
 
             nicolasCompteEpargne.crediter(20);
             nicolasCompteEpargne.crediter(100);
@@ -73,13 +73,13 @@ namespace TP1
             compte.solde += somme;
             operations.Add("-" + somme);
             compte.operations.Add("+" + somme);
-        } 
+        }
 
         public virtual void afficher()
         {
-            
 
-            foreach(string op in operations)
+
+            foreach (string op in operations)
             {
                 Console.WriteLine(op);
             }
@@ -109,7 +109,7 @@ namespace TP1
         }
     }
 
-    class CompteEpargne: Compte
+    class CompteEpargne : Compte
     {
         float taux;
         public CompteEpargne(float solde, string nomProp, ArrayList op, float taux) : base(solde, nomProp, op)
